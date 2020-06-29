@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/root.css">
+  <link rel="stylesheet" href="styles/ui.css">
+  <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+  <div class="fixed" id='border'>
+    <div class="absolute" id="b1"></div>
+    <div class="absolute" id="b2"></div>
+    <div class="absolute line vert top center"></div>
+    <div class="absolute line vert bottom center"></div>
+    <div class="absolute line horiz left center"></div>
+    <div class="absolute line horiz right center"></div>
+    <div class="absolute circle left center"></div>
+    <div class="absolute circle right center"></div>
+  </div>
+
+  <div class="fixed" id="indicators">
+    <div class="indicator" id="ind1">
+      <div class="line horiz"></div>
+      <div class="index">01</div>
+    </div>
+    <div class="indicator" id="ind2">
+      <div class="line horiz"></div>
+      <div class="index">02</div>
+    </div>
+    <div class="indicator" id="ind3">
+      <div class="line horiz"></div>
+      <div class="index">03</div>
+    </div>
+    <div class="indicator" id="ind4">
+      <div class="line horiz"></div>
+      <div class="index">04</div>
+    </div>
+  </div>
+
+  <main id="content">
+    <section id="s1">
+
+      <h2>proudly presenting</h2>
+      <h1>a vision into the future</h1>
+
+      <button data-to="s2" id="s1_btn"><h2>dive in</h2></button>
+
+    </section>
+    <section id="s2"></section>
+    <section></section>
+    <section></section>
+  </main>
+
+  <script type="x-shader/x-vertex" id="vertexshader">
+    attribute float scale;
+    attribute float positiion;
+
+    void main() {
+
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+      gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+      gl_Position = projectionMatrix * mvPosition;
+
+    }
+  </script>
+  <script type="x-shader/x-fragment" id="fragmentshader" >
+    uniform vec3 color;
+
+    void main() {
+
+      if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+      gl_FragColor = vec4( color, 1.0 );
+
+    }
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js" integrity="sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha256-XDWrid8aGX+NZwSY7JzTu6oWArI71Sw+aUZ9Hd0P5mo=" crossorigin="anonymous"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/gl.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>

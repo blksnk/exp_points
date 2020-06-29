@@ -1,0 +1,88 @@
+#border {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+#border #b1 {
+  margin: var(--unit);
+  border: 2px dashed var(--white);
+  width: calc(100% - 2 * var(--unit));
+  height: calc(100% - 2 * var(--unit));
+}
+
+#border #b2 {
+  margin: calc(3 * var(--unit));
+  border: 2px solid var(--white);
+  width: calc(100% - 6 * var(--unit));
+  height: calc(100% - 6 * var(--unit));
+}
+
+.line {
+  background-color: var(--white);
+}
+
+.line.vert {
+  width: 2px;
+  height: calc(5 * var(--unit));
+}
+
+.line.horiz {
+  width: calc(5 * var(--unit));
+  height: 2px;
+}
+
+.circle {
+  border-radius: calc(2 * var(--unit));
+  border: 2px solid var(--white);
+  width: calc(2 * var(--unit));
+  height: calc(2 * var(--unit));
+  background-color: transparent;
+  transition-duration: .2s;
+  pointer-events: all;
+}
+
+.circle:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+#border .circle.left {
+  left: calc(2 * var(--unit) + 1px);
+}
+
+#border .circle.right {
+  right: calc(2 * var(--unit) + 1px);
+}
+
+#indicators {
+  right: calc(6 * var(--unit));
+  bottom: calc(6 * var(--unit));
+  top: calc(6 * var(--unit));
+  width: calc(8 * var(--unit));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--unit);
+}
+
+.indicator .line {
+  transform-origin: right;
+}
+
+.indicator div {
+  font-family: 'Inconsolata';
+  font-weight: bold;
+  font-size: calc(1 * var(--unit));
+}

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'DrukWide';
+  src: url('../assets/fonts/DrukWideBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/fonts/InconsolataExtraExpanded-Black.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
