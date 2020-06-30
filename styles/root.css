@@ -9,9 +9,14 @@
 
   --gray: #212121;
   --blue: #2d00f7;
+  --purple: #8167fa;
 
   color: var(--white);
   font-family: 'DrukWide';
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 *:focus {
@@ -64,12 +69,6 @@ button {
   margin: 0;
   background-color: transparent;
   cursor: pointer;
-}
-
-button:hover,
-button:hover * {
-  color: var(--blue);
-
 }
 
 .fixed {

@@ -8,3 +8,48 @@
 #s1 h1 {
   text-align: center;
 }
+
+#s1_btn {
+  position: relative;
+  z-index: 3;
+}
+
+#s1_btn h2 {
+  position: relative;
+  z-index: 3;
+}
+
+#s1_btn::before,
+#s1_btn::after {
+  content: "";
+  position: absolute;
+  height: calc(3 * var(--unit));
+  width: calc(3 * var(--unit));
+  background-color: var(--blue);
+  border-radius: calc(3 * var(--unit));
+  border: 2px solid var(--blue);
+  top: calc(-0.93 * var(--unit));
+  z-index: 0;
+  transition-duration: .2s;
+}
+
+#s1_btn::before {
+  left: calc(50% - 1.5 * var(--unit) - 2px);
+}
+
+#s1_btn::after {
+  right: calc(50% - 1.5 * var(--unit) - 2px);
+}
+
+#s1_btn:hover::before,
+#s1_btn:hover::after {
+  background-color: transparent;
+}
+
+#s1_btn:hover::before {
+  transform: translateX(calc(0.5 * var(--unit)));
+}
+
+#s1_btn:hover::after {
+  transform: translateX(calc(-0.5 * var(--unit)));
+}

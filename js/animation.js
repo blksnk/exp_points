@@ -19,11 +19,11 @@ function updateIndicators(ratio) {
     let b;
     const indexRatio = item.index / (indicators.length - 1)
     if(item.index === 0) {
-      b = 1 - ratio
+      b = (1 - ratio).clamp(0.1, 1)
     } else if (item.index === indicators.length - 1) {
-      b = ratio
+      b = ratio.clamp(0.1, 1)
     } else {
-      b = Math.abs(indexRatio - (1 - ratio))
+      b = Math.abs(indexRatio - (1 - ratio)).clamp(0.1, 1)
     }
 
     console.log('index:', item.index, 'b:', b)
