@@ -1,5 +1,6 @@
 function scrollTo(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" })
+  console.log("called")
+  document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "center" })
 }
 
 function initNavigation() {
@@ -11,4 +12,26 @@ function initNavigation() {
   })
 }
 
+let scrollTimer = null;
+let disableScrollEvent = false;
+
+function stickyScroll() {
+    const index = Math.round(scrollY / window.innerHeight)
+    console.log(index)
+    disableScrollEvent = true;
+    scrollTo(`s${index + 1}`)
+    setTimeout(() => {
+      disableScrollEvent = false
+    }, 500)
+}
+
 initNavigation()
+
+window.addEventListener('scroll', function() {
+    if(scrollTimer !== null) {
+        clearTimeout(scrollTimer);
+    }
+    if(!disableScrollEvent) {
+      scrollTimer = setTimeout(stickyScroll, 500);
+    }
+}, false);

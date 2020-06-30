@@ -24,7 +24,10 @@
 }
 
 body {
-  background-color: var(--black);
+  /* background-color: var(--black); */
+  background-image: linear-gradient(to bottom, var(--black) 15%, var(--blue), var(--purple));
+  scroll-snap-type: y mandatory;
+
 }
 
 canvas {
@@ -37,13 +40,14 @@ canvas {
 }
 
 main {
-
+  scroll-snap-type: y mandatory;
 }
 
 section {
   min-height: 100vh;
   width: 100%;
   padding: calc(6 * var(--unit));
+  scroll-snap-align: center;
 }
 
 h1, h2 {
@@ -51,16 +55,21 @@ h1, h2 {
 }
 
 h1 {
-  color: var(--blue);
+  color: var(--white);
   font-size: calc(3 * var(--unit));
   text-shadow: 0px 0px 16px currentcolor;
 }
 
 h2 {
   color: var(--white);
-  font-size: calc(1 * var(--unit));
-  text-shadow: 0px 0px 6px currentcolor;
+  font-size: var(--unit);
+  text-shadow: 0px 0px 5px currentcolor;
   transition-duration: .2s;
+}
+
+p {
+  font-family: 'Inconsolata';
+  font-size: var(--unit)
 }
 
 button {
@@ -70,40 +79,3 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.top {
-  top: 0;
-}
-
-.bottom {
-  bottom: 0;
-}
-
-.left {
-  left: 0;
-}
-
-.right {
-  right: 0;
-}
-
-.right.center,
-.left.center {
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-}
-
-.top.center,
-.bottom.center {
-  left: calc(50% - 1px);
-}
-

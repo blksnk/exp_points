@@ -6,10 +6,13 @@
   <title></title>
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/root.css">
+  <link rel="stylesheet" href="styles/helpers.css">
   <link rel="stylesheet" href="styles/ui.css">
   <link rel="stylesheet" href="styles/layout.css">
 </head>
 <body>
+
+  <div id='bg' class="fixed top bottom left right"></div>
   <div class="fixed" id='border'>
     <div class="absolute" id="b1"></div>
     <div class="absolute" id="b2"></div>
@@ -24,19 +27,27 @@
   <div class="fixed" id="indicators">
     <div class="indicator" id="ind1">
       <div class="line horiz"></div>
-      <div class="index">01</div>
+      <button data-to="s1" class="index">
+        <span>00</span>
+      </button>
     </div>
     <div class="indicator" id="ind2">
       <div class="line horiz"></div>
-      <div class="index">02</div>
+      <button data-to="s2" class="index">
+        <span>01</span>
+      </button>
     </div>
     <div class="indicator" id="ind3">
       <div class="line horiz"></div>
-      <div class="index">03</div>
+      <button data-to="s3" class="index">
+        <span>02</span>
+      </button>
     </div>
     <div class="indicator" id="ind4">
       <div class="line horiz"></div>
-      <div class="index">04</div>
+      <button data-to="s4" class="index">
+          <span>03</span>
+        </button>
     </div>
   </div>
 
@@ -51,14 +62,56 @@
       </button>
 
     </section>
-    <section id="s2"></section>
-    <section></section>
-    <section></section>
+
+    <section class="flex row" id="s2">
+
+      <div id="s2_left" class="flex column around a-center fill">
+        <h2>feeling like you're drowning?</h2>
+
+        <h1>let's go on a <span class="purple">journey</span></h1>
+      </div>
+
+      <div id="s2_right" class="fill flex a-center">
+        <div class="s2_text">
+          <p>Consectetur sed est aliqua sit ea laborum elit ut in dolore minim adipisicing irure magna minim irure commodo anim voluptate elit voluptate fugiat commodo dolore ea nulla irure.</p>
+
+          <p>Lorem ipsum quis consectetur voluptate ex sit enim ad in in aute consequat sit nulla aute nulla laboris aliquip ut minim id magna pariatur. Lorem ipsum occaecat aliquip eiusmod id cillum pariatur quis reprehenderit quis ullamco pariatur reprehenderit quis est anim nulla.</p>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <section id="s3" class="">
+      <div id='s3_title_container'>
+        <h1 class="">things to lean on</h1>
+      </div>
+
+      <div class="s3_box" id='s3_box0'>
+        <h2>family</h2>
+      </div>
+      <div class="s3_box" id='s3_box1'>
+        <h2>work</h2>
+      </div>
+      <div class="s3_box" id='s3_box2'>
+        <h2>art</h2>
+      </div>
+      <div class="s3_box" id='s3_box3'>
+        <h2>friends</h2>
+      </div>
+      <div class="s3_box" id='s3_box4'>
+        <h2>hobbies</h2>
+      </div>
+
+    </section>
+    <section id='s4'>
+
+    </section>
   </main>
 
   <script type="x-shader/x-vertex" id="vertexshader">
     attribute float scale;
-    attribute float positiion;
 
     void main() {
 
@@ -84,6 +137,8 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js" integrity="sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha256-XDWrid8aGX+NZwSY7JzTu6oWArI71Sw+aUZ9Hd0P5mo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marquee3000@1.1.1/marquee3k.min.js"></script>
+
   <script src="js/helpers.js"></script>
   <script src="js/gl.js"></script>
   <script src="js/navigation.js"></script>

@@ -1,3 +1,9 @@
+#bg {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
 #border {
   position: fixed;
   top: 0;
@@ -10,14 +16,17 @@
 
 #border #b1 {
   margin: var(--unit);
-  border: 2px dashed var(--white);
+  outline: 2px dashed var(--white);
+  outline-offset: -1px;
   width: calc(100% - 2 * var(--unit));
   height: calc(100% - 2 * var(--unit));
+
 }
 
 #border #b2 {
   margin: calc(3 * var(--unit));
-  border: 2px solid var(--white);
+  outline: 2px solid var(--white);
+  outline-offset: -1px;
   width: calc(100% - 6 * var(--unit));
   height: calc(100% - 6 * var(--unit));
 }
@@ -81,8 +90,48 @@
   transform-origin: right;
 }
 
-.indicator div {
+.indicator span {
   font-family: 'Inconsolata';
   font-weight: bold;
   font-size: calc(1 * var(--unit));
+  position: relative;
+  z-index: 3;
+}
+
+.indicator button {
+  position: relative;
+  width: calc(2 * var(--unit));
+  height: var(--unit);
+}
+
+.indicator button::after {
+  content: "";
+  position: absolute;
+  top: calc(-0.5 * var(--unit));
+  left: 0;
+  width: calc(2 * var(--unit));
+  height: calc(2 * var(--unit));
+  border-radius: calc(2 * var(--unit));
+  background-color: var(--blue);
+  opacity: .5;
+  transform: scale(0, 0);
+  transition-duration: .2s;
+  z-index: 1;
+}
+
+.indicator button:hover::after {
+  transform: scale(1, 1);
+}
+
+.text_container {
+
+  padding: var(--unit);
+}
+
+.text_container > * {
+  margin-bottom: var(--unit);
+}
+
+.text_container > *:last-child {
+  margin-bottom: 0;
 }

@@ -1,0 +1,96 @@
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.right.center,
+.left.center {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.top.center,
+.bottom.center {
+  left: calc(50% - 1px);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.flex .fill {
+  flex: 1;
+}
+
+.flex.a-center {
+  align-items: center;
+}
+
+.flex.j-center {
+  justify-content: center;
+}
+
+.flex.between {
+  justify-content: space-between;
+}
+
+.flex.around {
+  justify-content: space-around;
+}
+
+.flex.evenly {
+  justify-content: space-evenly;
+}
+
+.flex.a-start {
+  align-items: flex-start;
+}
+
+.flex.a-end {
+  align-items: flex-end;
+}
+
+.flex.j-start {
+  justify-content: flex-start;
+}
+
+.flex.j-end {
+  justify-content: flex-end;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.purple {
+  color: var(--purple);
+}
