@@ -61,11 +61,11 @@
 }
 
 #border .circle.left {
-  left: calc(2 * var(--unit) + 1px);
+  left: calc(2 * var(--unit));
 }
 
 #border .circle.right {
-  right: calc(2 * var(--unit) + 1px);
+  right: calc(2 * var(--unit));
 }
 
 #indicators {
