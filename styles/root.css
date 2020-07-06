@@ -46,7 +46,7 @@ main {
 section {
   min-height: 100vh;
   width: 100%;
-  padding: calc(6 * var(--unit));
+  padding: calc(5 * var(--unit)) calc(5 * var(--unit)) calc(6 * var(--unit)) calc(5 * var(--unit));
   scroll-snap-align: center;
 }
 
@@ -68,8 +68,9 @@ h2 {
 }
 
 p {
-  font-family: 'Inconsolata';
-  font-size: var(--unit)
+  font-family: 'Beausite';
+  font-size: calc(0.75 * var(--unit));
+  font-feature-settings: "ss13" 1;
 }
 
 button {

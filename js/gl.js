@@ -53,7 +53,6 @@ function createParticles() {
     fragmentShader: document.getElementById('fragmentshader').textContent
 
   });
-
   particles = new THREE.Points(geometry, material);
 
   scene.add(particles);
@@ -152,8 +151,8 @@ function animate() {
 }
 
 function tweenLookat(reverse) {
-  if(!reverse) {
-    gsap.to(camera.rotation, {y: 0})
+  if (!reverse) {
+    gsap.to(camera.rotation, { y: 0 })
   } else {
     gsap.to(camera.rotaion, { y: scene.position.y - camera.position.y })
   }

@@ -1,5 +1,4 @@
 function scrollTo(id) {
-  console.log("called")
   document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "center" })
 }
 
@@ -17,9 +16,9 @@ let disableScrollEvent = false;
 
 function stickyScroll() {
     const index = Math.round(scrollY / window.innerHeight)
-    console.log(index)
     disableScrollEvent = true;
     scrollTo(`s${index + 1}`)
+    console.log('event triggered');
     setTimeout(() => {
       disableScrollEvent = false
     }, 500)

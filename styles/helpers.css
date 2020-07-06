@@ -7,6 +7,10 @@
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .top {
   top: 0;
 }
@@ -93,4 +97,10 @@
 
 .purple {
   color: var(--purple);
+}
+
+.fill_contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

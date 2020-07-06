@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-labelledby="graphic">
+  
+  <defs>
+    <title>circle</title>
+    <linearGradient id="gradient">
+      <stop offset="0%" stop-color="#2d00f7"/>
+      <stop offset="100%" stop-color="#212121"/>
+    </linearGradient>
+  </defs>
+  
+  <circle id="circle" r="300" cx="300" cy="300" fill="url(#gradient)"/>  
+</svg>
